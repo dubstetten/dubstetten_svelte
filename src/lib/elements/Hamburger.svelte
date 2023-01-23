@@ -4,7 +4,7 @@
         open = !open;
     };
     export let ariaLabel = "toggle menu";
-    export let width: string | number = 80;
+    export let width: string | number = 50;
 </script>
 
 <button on:click={onClick} aria-expanded={open} aria-label={ariaLabel}>

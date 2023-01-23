@@ -23,7 +23,7 @@
 <style>
   .burger {
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
   }
 
   nav {
@@ -36,14 +36,6 @@
     gap: 0.5rem;
     align-items: center;
     background-color: var(--white);
-  }
-  ul {
-    display: flex;
-  }
-
-  li {
-    list-style-type: none;
-    margin: 0 0.5rem;
   }
   a {
     color: rgb(0, 0, 0);
