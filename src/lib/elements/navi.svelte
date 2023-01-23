@@ -13,11 +13,10 @@
 </div>
 {#if open}
   <nav transition:fly={{ y: -200, duration: 400 }}>
-    <a href="https://magrippis.com/tube">Videos</a>
-    <a href="https://magrippis.com/blog">Blogposts</a>
-    <a href="https://magrippis.com/tube">Guides</a>
-    <a href="https://magrippis.com/tube">Portfolio</a>
-    <a href="https://magrippis.com/milestones">Milestones</a>
+    <a href="/tickets">Tickets</a>
+    <a href="/lineup">Line-Up</a>
+    <a href="/about">Info</a>
+    <a href="/contact">Contact</a>
   </nav>
 {/if}
 
