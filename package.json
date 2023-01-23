@@ -36,6 +36,7 @@
   },
   "type": "module",
   "dependencies": {
+    "svelte-burger-menu": "^2.0.5",
     "svelte-icons": "^2.1.0",
     "svelte-tailwind-cookieconsent": "^0.0.15"
   }

@@ -14,7 +14,7 @@ export type ProgrammItem = {
 
 export const programm: ProgrammItem[] = [
   {
-    startsAt: "You, Now, Here",
+    startsAt: "You, Now, Here, irgendwas",
   },
   {
     startsAt: "February 2023",

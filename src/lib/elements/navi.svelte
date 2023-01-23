@@ -1,18 +1,42 @@
-<nav>
-  <ul>
-    <li><a href="/tickets">Tickets</a></li>
-    <li><a href="/lineup">Line-Up</a></li>
-    <li><a href="/about">Info</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
-</nav>
+<script lang="ts">
+  import { fly } from "svelte/transition";
+  import Burger from "$lib/elements/Hamburger.svelte";
+
+  export let open = false;
+  export const onClick = (): void => {
+    open = !open;
+  };
+</script>
+
+<div class="burger">
+  <Burger {open} {onClick} />
+</div>
+{#if open}
+  <nav transition:fly={{ y: -200, duration: 400 }}>
+    <a href="https://magrippis.com/tube">Videos</a>
+    <a href="https://magrippis.com/blog">Blogposts</a>
+    <a href="https://magrippis.com/tube">Guides</a>
+    <a href="https://magrippis.com/tube">Portfolio</a>
+    <a href="https://magrippis.com/milestones">Milestones</a>
+  </nav>
+{/if}
 
 <style>
-  nav {
+  .burger {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+  }
+
+  nav {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     align-items: center;
-    height: 2rem;
+    background-color: var(--white);
   }
   ul {
     display: flex;
