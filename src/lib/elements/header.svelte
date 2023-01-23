@@ -19,7 +19,9 @@
     align-items: center;
 
     background-color: hsla(0, 4%, 5%, 0.597);
-    z-index: 100;
+    font-size: 2rem;
+    color: var(--accent-color);
+    z-index: 2;
   }
   @media (min-width: 400px) {
     header {

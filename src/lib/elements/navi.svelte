@@ -23,7 +23,7 @@
 <style>
   .burger {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   nav {
@@ -46,7 +46,7 @@
     margin: 0 0.5rem;
   }
   a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-decoration: none;
   }
 </style>
