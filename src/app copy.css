@@ -9,7 +9,15 @@ body {
   box-sizing: border-box;
 }
 
-
+.btn {
+  color: #fff;
+  border-radius: 8px;
+  text-transform: uppercase;
+  background-color: #f27211;
+  font-weight: 800;
+  text-align: center;
+  padding: 1rem;
+}
 
 /*-------------
  	General
@@ -45,6 +53,19 @@ a {
   opacity: 0.9;
 }
 
+a:hover {
+  opacity: 1;
+}
+
+a.btn {
+  color: #fff;
+  border-radius: 8px;
+  text-transform: uppercase;
+  background-color: #f27211;
+  font-weight: 800;
+  text-align: center;
+}
+
 hr {
   width: 150px;
   height: 2px;
@@ -59,6 +80,18 @@ section {
   align-items: center;
 
   padding: 125px 100px;
+}
+
+@media (max-width: 1000px) {
+  section {
+    padding: 100px 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 80px 30px;
+  }
 }
 
 section h3.title {

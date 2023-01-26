@@ -1,44 +1,68 @@
 <script lang="ts">
-  import { fly } from "svelte/transition";
-  import Burger from "$lib/elements/Hamburger.svelte";
+  import MediaQuery from "svelte-media-queries";
 
-  export let open = false;
-  export const onClick = (): void => {
-    open = !open;
-  };
+  import {
+    Button,
+    Divider,
+    Menu,
+    Text,
+    createStyles,
+    Burger,
+    SvelteUIProvider,
+  } from "@svelteuidev/core";
+  let opened = false;
 </script>
 
-<div class="burger">
-  <Burger {open} {onClick} />
-</div>
-{#if open}
-  <nav transition:fly={{ y: -200, duration: 400 }}>
-    <a href="/tickets">Tickets</a>
-    <a href="/lineup">Line-Up</a>
-    <a href="/about">Info</a>
-    <a href="/contact">Contact</a>
-  </nav>
-{/if}
+<MediaQuery query="(min-width: 480px)" let:matches>
+  {#if matches}
+    <nav>
+      <ul>
+        <li><a href="/tickets">Tickets</a></li>
+        <li><a href="/lineup">Line-Up</a></li>
+        <li><a href="/about">Info</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
 
-<style>
-  .burger {
-    display: flex;
-    justify-content: end;
-  }
-
-  nav {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    background-color: var(--white);
-  }
-  a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-  }
-</style>
+    <style>
+      nav {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        height: 2rem;
+      }
+      ul {
+        display: flex;
+      }
+      li {
+        list-style-type: none;
+        margin: 0 0.5rem;
+      }
+      a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
+    </style>
+  {:else}
+    <SvelteUIProvider themeObserver="dark">
+      <Menu size="xl">
+        <Menu.Label>Menu</Menu.Label>
+        <Burger {opened} on:click={() => (opened = !opened)} slot="control"
+          >menu</Burger
+        >
+        <Menu.Item root="a" href="/tickets" on:click={() => (opened = !opened)}
+          >Tickets</Menu.Item
+        >
+        <Menu.Item root="a" href="/lineup" on:click={() => (opened = !opened)}
+          >Line-Up</Menu.Item
+        >
+        <Menu.Item root="a" href="/about" on:click={() => (opened = !opened)}
+          >Info</Menu.Item
+        >
+        <Menu.Item root="a" href="/contact" on:click={() => (opened = !opened)}
+          >Contact</Menu.Item
+        >
+      </Menu>
+    </SvelteUIProvider>
+  {/if}
+</MediaQuery>
